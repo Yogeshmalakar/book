@@ -31,8 +31,8 @@ export default function FrontHeader() {
                 placeholder='Search...'
                 className='border-4  border-sky-500 rounded-lg hidden lg:inline'
               />
-              <button className='w-12 h-10 lg:hidden' color='gray'>
-                <AiOutlineSearch className='className="text-black text-3xl bg-slate-100 border border-black w-9 rounded-lg h-7 mt-3 md:hidden' />
+              <button className='w-12 h-10 ' color='gray'>
+                <AiOutlineSearch className='className="text-black text-3xl bg-slate-100 border border-black w-9 mt-5 rounded-lg h-7  ' />
               </button>
             </form>
             <div className="hidden md:flex items-center lg:order-2">
@@ -110,9 +110,9 @@ export default function FrontHeader() {
           </div>
         </nav>
       </header>
-      <div className=' w-full h-screen absolute z-0'>
+      {/* <div className=' w-full h-screen absolute z-0'>
         <Image src={backphoto}/>
-      </div>
+      </div> */}
     </>
   );
 }
