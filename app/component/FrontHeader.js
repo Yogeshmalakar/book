@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import namelogo from './image/ynamelogo.jpg';
-import { IoMdMenu } from 'react-icons/io';
+import { IoMdMenu, } from 'react-icons/io';
+import { AiOutlineSearch } from 'react-icons/ai';
 import { ImCross } from 'react-icons/im';
 
 export default function FrontHeader() {
@@ -11,21 +12,29 @@ export default function FrontHeader() {
 
   return (
     <>
-
-
       <header className="shadow sticky z-50 top-0">
-        <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
+        <nav className="bg-gray border-gray-200 px-4 lg:px-6 py-2.5">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-            <Link href="/" className="flex items-center">
-              <Image
+            <Link href="/" className="flex self-center font-semibold text-sm dard:text:white">
+              {/* <Image
                 src={namelogo}
                 className="mr-3 h-16 rounded-full"
                 alt="Logo"
                 width={64}
                 height={64}
-              />
-              book store
+              /> */}
+             <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg'>Blog-App</span> 
             </Link>
+            <form>
+        <input
+          type='text'
+          placeholder='Search...'
+          className='border-4  border-sky-500 rounded-lg hidden lg:inline'
+        />
+        <button className='w-12 h-10 lg:hidden' color='gray'>
+          <AiOutlineSearch />
+        </button>
+      </form>
             <div className="hidden md:flex items-center lg:order-2">
               <Link href="#" className="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none">
                 Log in
