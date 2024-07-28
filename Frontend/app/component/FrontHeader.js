@@ -6,7 +6,7 @@ import namelogo from './image/ynamelogo.jpg';
 import { IoMdMenu, } from 'react-icons/io';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { ImCross } from 'react-icons/im';
-import backphoto from "../component/image/backgroung.webp"
+import backphoto from "./image/backgroung.webp"
 export default function FrontHeader() {
   const [toggle, setToggle] = useState(false);
 
