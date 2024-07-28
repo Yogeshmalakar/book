@@ -14,7 +14,7 @@ function Page() {
   };
 
   return (
-    <div className='w-full mt-4 flex justify-center items-center'>
+    <div className='w-full sm:h-screen flex justify-center items-center z-10'>
       <div className='w-1/4 bg-indigo-600 m-auto p-5 rounded-md'>
         <h3 className='text-center text-white'>SIGN-UP</h3>
         <form onSubmit={handleSubmit}>

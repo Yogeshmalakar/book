@@ -5,7 +5,7 @@ function page() {
     return (
         <>
 
-            <div className='w-full mt-4 flex justify-center items-center'>
+            <div className='w-full sm:h-screen flex justify-center items-center'>
                 <div className=' w-auto bg-blue-500 m-auto p-5 rounded-md py-12 px-8'>
                     <h3 className='text-center text-white'>LOGIN</h3>
                     <form action="">
