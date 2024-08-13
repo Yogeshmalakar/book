@@ -1,9 +1,12 @@
 import { Router } from "express";
-import { registerUser } from "../controller/user.controller.js";
+import { registerUser , loginUser} from "../controller/user.controller.js";
 
 
 const userRouters = Router()
 
 userRouters.route("/register").post(registerUser)
+
+userRouters.route("/login").post(loginUser)
+
 
 export {userRouters}
