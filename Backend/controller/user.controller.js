@@ -38,10 +38,10 @@ const registerUser = async(req,res) => {
       });
    } catch (error) {
       console.log(error)
-      return res.statu(error.statusCode|| 500)
+      return res.status(error.statusCode|| 500)
       .send({
         error:error.message||"Internal storage error",
-        error:error.data||"",
+        data:error.data||"",
         status:error.statusCode
       })
    }

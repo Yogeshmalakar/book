@@ -4,6 +4,6 @@ import { registerUser } from "../controller/user.controller.js";
 
 const userRouters = Router()
 
-userRouters.route("/sign-up").post(registerUser)
+userRouters.route("/register").post(registerUser)
 
 export {userRouters}
