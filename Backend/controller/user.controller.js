@@ -1,4 +1,4 @@
-import { register_User } from '../model/user.model.js'
+import { register_User , login_User} from '../model/user.model.js'
 import {ApiError }from '../utils/ApiError.js'
 
 const registerUser = async(req,res) => {
@@ -38,7 +38,8 @@ const registerUser = async(req,res) => {
       });
    } catch (error) {
       console.log(error)
-      return res.statu(error.statusCode|| 500)
+      return res.status
+      (error.statusCode|| 500)
       .send({
         error:error.message||"Internal storage error",
         error:error.data||"",
@@ -46,4 +47,48 @@ const registerUser = async(req,res) => {
       })
    }
 }
-export {registerUser}
+
+const loginUser = async(req,res) => {
+  try {
+    const{email,password} = req.body
+    if(!(email && password)){
+      throw new ApiError(400,"each field is required")
+    }
+  
+    const result = await login_User(req)
+    
+    if(!result){
+      
+    }
+
+    if(email !== result[0].email){
+      return res.status(200)
+      console.log("result",result)
+      .send({
+          message: "No record found",
+          data: result,
+          status: 200,
+      })
+    }
+    return  res.status(200).send({
+      message: "Register user successfully",
+      data: result,
+      status: 200,
+    });
+  
+  } catch (error) {
+    console.log(error)
+      return res.status
+      (error.statusCode|| 500)
+      .send({
+        error:error.message||"Internal storage error",
+        error:error.data||"",
+        status:error.statusCode
+      })
+  }
+}
+
+
+export{registerUser , loginUser}
+
+
