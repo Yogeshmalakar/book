@@ -40,4 +40,17 @@ const login_User = async(data) => {
     throw error
   }
 }
-export{register_User,login_User}
+const update_User = (req, res) => {
+  const userId = req.params.id;
+  const { password, email} = req.body;
+
+  const sql = `UPDATE user SET  email = ?, password = ? WHERE id = ?`;
+  db.query(sql, [ email, password], (err, result) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ error: 'Database error' });
+    }
+    res.json({ message: 'User updated successfully' });
+  });
+});
+export{register_User,login_User,update_User}
