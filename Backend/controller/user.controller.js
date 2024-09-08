@@ -53,7 +53,6 @@ const loginUser = async(req,res) => {
 
     if(email !== result[0].email){
       return res.status(200)
-      console.log("result",result)
       .send({
           message: "No record found",
           data: result,
