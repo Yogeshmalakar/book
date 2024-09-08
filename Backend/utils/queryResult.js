@@ -1,9 +1,10 @@
 import {connection} from'../DB/mysql.db.js'
 
-const queryResult=(query,values)=>{
- return new Promise((reject,resolve)=>{
+const queryResult=async(query,values)=>{
+ return  new Promise(async(resolve,reject)=>{
         connection.query(query,values,(error,result)=>{
             if (error) {
+                console.log( "query result :",error)
                 return reject({
                     statusCode:"400",
                     message: error
@@ -15,3 +16,4 @@ const queryResult=(query,values)=>{
 }
 
 export{queryResult}
+
